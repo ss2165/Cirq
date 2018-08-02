@@ -45,9 +45,18 @@ def test_named_qubit_str():
     assert q.name == 'a'
     assert str(q) == 'a'
 
+def test_indexed_qubit_str():
+    q = cirq.IndexedQubit(12)
+    assert q.index== 12
+    assert str(q) == str(12)
 
 # Python 2 gives a different repr due to unicode strings being prefixed with u.
 @cirq.testing.only_test_in_python3
 def test_named_qubit_repr():
     q = cirq.NamedQubit('a')
     assert repr(q) == "NamedQubit('a')"
+
+@cirq.testing.only_test_in_python3
+def test_indexed_qubit_repr():
+    q = cirq.IndexedQubit(13)
+    assert repr(q) == "IndexedQubit(13)"

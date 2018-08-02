@@ -102,6 +102,7 @@ from cirq.ops.pauli_string import (
 from cirq.ops.raw_types import (
     Gate,
     NamedQubit,
+    IndexedQubit,
     Operation,
     QubitId,
 )

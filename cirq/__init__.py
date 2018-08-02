@@ -136,6 +136,7 @@ from cirq.ops import (
     measure_each,
     MeasurementGate,
     NamedQubit,
+    IndexedQubit,
     OP_TREE,
     Operation,
     ParameterizableEffect,

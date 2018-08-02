@@ -54,6 +54,29 @@ class NamedQubit(QubitId):
         return hash((NamedQubit, self.name))
 
 
+class IndexedQubit(QubitId):
+    """A qubit identified by a number."""
+
+    def __init__(self, index: int) -> None:
+        self.index = index
+
+    def __str__(self):
+        return str(self.index)
+
+    def __repr__(self):
+        return 'IndexedQubit({})'.format(repr(self.index))
+
+    def __eq__(self, other):
+        if not isinstance(other, type(self)):
+            return NotImplemented
+        return self.index == other.index
+
+    def __ne__(self, other):
+        return not self == other
+
+    def __hash__(self):
+        return hash((IndexedQubit, self.index))
+
 class Gate:
     """An operation type that can be applied to a collection of qubits.
 
